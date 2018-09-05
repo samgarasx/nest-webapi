@@ -4,8 +4,8 @@ import { Get, Controller } from '@nestjs/common';
 export class ApiController {
   constructor() {}
 
-  @Get("/api")
-  api(): string {
-    return 'Welcome to Nest Web API!'
+  @Get("api")
+  index(): string {
+    return 'Welcome to Nest Web API'
   }
 }
