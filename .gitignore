@@ -1,0 +1,34 @@
+# compiled output
+/dist
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+npm-debug.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# API keys and secrets
+.env
+config.*.json
+
+# Security TLS certificates and keys
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+
+# Public static Files
+/public

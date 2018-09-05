@@ -1,0 +1,12 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "database": {
+      "host": "localhost",
+      "name": "nest_webapi",
+      "user": "",
+      "password": ""
+  }
+}
