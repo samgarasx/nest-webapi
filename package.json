@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An example of Nest web framework for a Web API",
   "author": "samgarasx",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "NODE_ENV=development ts-node -r tsconfig-paths/register src/app.ts",
