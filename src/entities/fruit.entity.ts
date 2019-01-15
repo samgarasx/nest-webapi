@@ -5,10 +5,10 @@ export class FruitEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ type: 'varchar' })
     @Index({ unique: true })
     no: string;
 
-    @Column()
+    @Column({ type: 'text' })
     description: string;
 }
