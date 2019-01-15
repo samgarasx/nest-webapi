@@ -10,7 +10,7 @@
         "eofline": false,
         "quotemark": [
             true,
-            "single"
+            "double"
         ],
         "indent": false,
         "member-access": [
@@ -21,7 +21,7 @@
         ],
         "max-line-length": [
             true,
-            150
+            120
         ],
         "member-ordering": [
             false

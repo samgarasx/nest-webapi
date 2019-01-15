@@ -1,4 +1,4 @@
-import { Schema } from 'convict';
+import {Schema} from "convict";
 
 export interface ConfigSchema {
   server: {
@@ -16,36 +16,36 @@ export interface ConfigSchema {
 export const configSchema: Schema<ConfigSchema> = {
   server: {
     host: {
-      doc: 'Server host',
-      format: '*',
-      default: 'localhost'
+      doc: "Server host",
+      format: "*",
+      default: "localhost"
     },
     port: {
-      doc: 'Server port',
-      format: 'port',
+      doc: "Server port",
+      format: "port",
       default: 3000
     },
   },
   database: {
     host: {
-      doc: 'Database host',
-        format: '*',
-        default: 'localhost'
+      doc: "Database host",
+        format: "*",
+        default: "localhost"
     },
     name: {
-      doc: 'Database name',
+      doc: "Database name",
       format: String,
-      default: ''
+      default: ""
     },
     user: {
-      doc: 'Database user',
+      doc: "Database user",
       format: String,
-      default: ''
+      default: ""
     },
     password: {
-      doc: 'Database password',
+      doc: "Database password",
       format: String,
-      default: '',
+      default: "",
       sensitive: true
     }
   }

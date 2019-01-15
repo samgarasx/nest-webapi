@@ -1,10 +1,10 @@
-import { Get, Controller, Param, Post, Body, Put, Delete } from '@nestjs/common';
-import { EntityManager } from 'typeorm';
-import { FruitEntity } from '../entities/fruit.entity';
-import { Fruit } from '../models/fruit';
-import { JsonResponse } from '../helpers/json.response';
+import {Get, Controller, Param, Post, Body, Put, Delete} from "@nestjs/common";
+import {EntityManager} from "typeorm";
+import {FruitEntity} from "../entities/fruit.entity";
+import {Fruit} from "../models/fruit";
+import {JsonResponse} from "../helpers/json.response";
 
-@Controller('api/fruits')
+@Controller("api/fruits")
 export class FruitController {
   constructor(private readonly entityManager: EntityManager) {}
 
@@ -20,12 +20,12 @@ export class FruitController {
       });
   }
 
-  @Get(':id')
-  one(@Param('id') id: number): Promise<JsonResponse> {
+  @Get(":id")
+  one(@Param("id") id: number): Promise<JsonResponse> {
     return this.entityManager.findOne(FruitEntity, id)
       .then(fruitEntity => {
         if (!fruitEntity) {
-          return JsonResponse.failure('Fruit does not exists');
+          return JsonResponse.failure("Fruit does not exists");
         }
 
         const fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
@@ -51,7 +51,7 @@ export class FruitController {
       })
       .then(fruitEntity => {
         if (!fruitEntity) {
-          return JsonResponse.failure('Fruit already exists');
+          return JsonResponse.failure("Fruit already exists");
         }
 
         fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
@@ -60,8 +60,8 @@ export class FruitController {
       });
   }
 
-  @Put(':id')
-  edit(@Param('id') id: number, @Body() fruit: Fruit): Promise<JsonResponse> {
+  @Put(":id")
+  edit(@Param("id") id: number, @Body() fruit: Fruit): Promise<JsonResponse> {
     return this.entityManager.findOne(FruitEntity, id)
       .then(fruitEntity => {
         if (fruitEntity) {
@@ -74,7 +74,7 @@ export class FruitController {
       })
       .then(fruitEntity => {
         if (!fruitEntity) {
-          return JsonResponse.failure('Fruit does not exists');
+          return JsonResponse.failure("Fruit does not exists");
         }
 
         fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
@@ -83,8 +83,8 @@ export class FruitController {
       });
   }
 
-  @Delete(':id')
-  delete(@Param('id') id: number): Promise<JsonResponse> {
+  @Delete(":id")
+  delete(@Param("id") id: number): Promise<JsonResponse> {
     return this.entityManager.findOne(FruitEntity, id)
       .then(fruitEntity => {
         if (fruitEntity) {
@@ -95,7 +95,7 @@ export class FruitController {
       })
       .then(fruitEntity => {
         if (!fruitEntity) {
-          return JsonResponse.failure('Fruit does not exists');
+          return JsonResponse.failure("Fruit does not exists");
         }
 
         const fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);

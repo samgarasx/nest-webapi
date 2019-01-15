@@ -1,9 +1,9 @@
-import { Get, Controller } from '@nestjs/common';
+import {Get, Controller} from "@nestjs/common";
 
 @Controller()
 export class ApiController {
-  @Get('api')
+  @Get("api")
   index(): string {
-    return 'Welcome to Nest Web API!';
+    return "Welcome to Nest Web API!";
   }
 }

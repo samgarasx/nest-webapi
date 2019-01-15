@@ -1,5 +1,5 @@
-import * as convict from 'convict';
-import { ConfigSchema, configSchema } from './config.schema';
+import * as convict from "convict";
+import {ConfigSchema, configSchema} from "./config.schema";
 
 export class ConfigService {
   private readonly config: convict.Config<ConfigSchema>;

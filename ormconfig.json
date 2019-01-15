@@ -1,0 +1,9 @@
+{
+  "type": "sqlite",
+  "entities": ["**/entities/**.entity{.ts,.js}"],
+  "database": "db/fruit_store.sqlite3",
+  "migrations": ["db/migrations/*{.ts,.js}"],
+  "cli": {
+    "migrationsDir": "db/migrations"
+  }
+}
