@@ -1,6 +1,6 @@
 ## Introduction
 
-This project is a an example of [Nest](https://nestjs.com/) framework for a Web API.
+This project is a an example of [Nest](https://nestjs.com/) web framework for a Web API.
 
 ### Getting Started
 
