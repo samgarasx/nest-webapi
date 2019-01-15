@@ -2,13 +2,13 @@ import { Entity, PrimaryGeneratedColumn, Column, Index } from 'typeorm';
 
 @Entity('fruit')
 export class FruitEntity {
-    @PrimaryGeneratedColumn({ type: 'bigint' })
+    @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 20 })
+    @Column()
     @Index({ unique: true })
     no: string;
 
-    @Column({  length: 50 })
+    @Column()
     description: string;
 }

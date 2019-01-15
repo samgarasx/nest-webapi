@@ -1,8 +1,8 @@
 import { Get, Controller, Param, Post, Body, Put, Delete } from '@nestjs/common';
 import { EntityManager } from 'typeorm';
-import { FruitEntity } from 'entities/fruit.entity';
-import { Fruit } from 'models/fruit';
-import { JsonResponse } from 'helpers/json.response';
+import { FruitEntity } from '../entities/fruit.entity';
+import { Fruit } from '../models/fruit';
+import { JsonResponse } from '../helpers/json.response';
 
 @Controller('api/fruits')
 export class FruitController {
@@ -19,7 +19,7 @@ export class FruitController {
         return JsonResponse.success(fruits);
       });
   }
-  
+
   @Get(':id')
   one(@Param('id') id: number): Promise<JsonResponse> {
     return this.entityManager.findOne(FruitEntity, id)
@@ -27,7 +27,7 @@ export class FruitController {
         if (!fruitEntity) {
           return JsonResponse.failure('Fruit does not exists');
         }
-        
+
         const fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
 
         return JsonResponse.success(fruit);
@@ -42,7 +42,7 @@ export class FruitController {
           const fruitEntity = new FruitEntity();
 
           fruitEntity.no = fruit.no;
-          fruitEntity.description = fruit.description; 
+          fruitEntity.description = fruit.description;
 
           return this.entityManager.save(fruitEntity);
         }
@@ -54,7 +54,7 @@ export class FruitController {
           return JsonResponse.failure('Fruit already exists');
         }
 
-        const fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
+        fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
 
         return JsonResponse.success(fruit);
       });
@@ -65,12 +65,11 @@ export class FruitController {
     return this.entityManager.findOne(FruitEntity, id)
       .then(fruitEntity => {
         if (fruitEntity) {
-          fruitEntity.no = fruit.no;
           fruitEntity.description = fruit.description;
 
           return this.entityManager.save(fruitEntity);
         }
-        
+
         return null;
       })
       .then(fruitEntity => {
@@ -78,7 +77,7 @@ export class FruitController {
           return JsonResponse.failure('Fruit does not exists');
         }
 
-        const fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
+        fruit = new Fruit(fruitEntity.id, fruitEntity.no, fruitEntity.description);
 
         return JsonResponse.success(fruit);
       });
@@ -89,9 +88,9 @@ export class FruitController {
     return this.entityManager.findOne(FruitEntity, id)
       .then(fruitEntity => {
         if (fruitEntity) {
-          this.entityManager.delete(FruitEntity, { id: id });
+          this.entityManager.delete(FruitEntity, { id });
         }
-        
+
         return fruitEntity;
       })
       .then(fruitEntity => {

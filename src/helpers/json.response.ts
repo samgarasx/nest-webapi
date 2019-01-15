@@ -4,10 +4,10 @@ export class JsonResponse {
   error?: any;
 
   static success<T>(data: T): JsonResponse {
-    return {  ok: true, data: data };
+    return { ok: true, data };
   }
-  
+
   static failure<T>(error: T): JsonResponse {
-    return { ok: false, error: error };
+    return { ok: false, error };
   }
 }

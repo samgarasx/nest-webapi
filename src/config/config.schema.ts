@@ -49,4 +49,4 @@ export const configSchema: Schema<ConfigSchema> = {
       sensitive: true
     }
   }
-}
+};

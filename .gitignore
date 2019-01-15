@@ -1,37 +1,15 @@
-# IDEs and editors
+# IDE
 .idea/
-out/
+.vscode/
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Build
+node_modules/
+dist/
 
-# compiled output
-/dist
+# Database
+db/*.sqlite3
 
-# dependencies
-/node_modules
+# Security
 
-# misc
-npm-debug.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-# API keys and secrets
-.env
-config.*.json
-
-# Security TLS certificates and keys
-*.pem
-*.key
-*.crt
-*.pfx
-*.p12
-
-# Public static Files
-/public
+# Configuration
+config/config.production.json
