@@ -4,8 +4,6 @@ This project is a an example of [Nest](https://nestjs.com/) web framework for a 
 
 ### Getting Started
 
-First, follow [TypeORM](http://typeorm.io/#/using-cli) instructions to install the TypeORM CLI.
-
 To create and migrate the database:
 
 1. Initialize and migrate database with `npm run typeorm migration:run`
